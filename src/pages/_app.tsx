@@ -1,6 +1,31 @@
 import { AppProps } from 'next/app';
-import '@/styles/global.css';
+import { ThemeProvider } from 'next-themes';
+import { darkTheme, globalStyles } from '@/styles/stitches.config';
+import VibeProvider from '@/lib/vibeProvider';
+
+import Layout from '@/components/layout';
+
+import Meta from '@/components/meta';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  // globalStyles();
+
+  return (
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      value={{
+        dark: darkTheme.className,
+        light: `light`,
+      }}
+    >
+      <Meta title={pageProps.pageTile} />
+
+      <VibeProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </VibeProvider>
+    </ThemeProvider>
+  );
 }
