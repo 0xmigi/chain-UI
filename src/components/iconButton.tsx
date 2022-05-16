@@ -39,9 +39,7 @@ export const IconButton = ({
 }: IconButtonProps) => {
   return (
     <ButtonBase boxStyle={`no`} onClick={onClick} css={{ ...css }} {...props}>
-      <Box Widthed={`1`} Heighted={`1`}>
-        {children}
-      </Box>
+      {children}
     </ButtonBase>
   );
 };

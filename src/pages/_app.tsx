@@ -8,7 +8,7 @@ import Layout from '@/components/layout';
 import Meta from '@/components/meta';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  // globalStyles();
+  globalStyles();
 
   return (
     <ThemeProvider

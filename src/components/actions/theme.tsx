@@ -3,6 +3,7 @@ import { IconButton } from '../iconButton';
 import { xStyle } from '@/styles/xStyle';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { Box } from '../primitives/box';
 
 export const ThemeButton = ({ ...props }) => {
   const { theme, setTheme } = useTheme();
@@ -19,11 +20,19 @@ export const ThemeButton = ({ ...props }) => {
 
   return (
     <IconButton aria-label={`Activate ${mode} mode`} onClick={toggleTheme}>
-      <SunIcon
-        className={xStyle({
-          css: { width: `$3`, height: `$3` },
-        })}
-      />
+      <Box
+        Color={`heavy`}
+        Rounded={`2`}
+        Padded={`3`}
+        Heighted={`1`}
+        Widthed={`1`}
+      >
+        <SunIcon
+          className={xStyle({
+            css: { width: `$3`, height: `$3` },
+          })}
+        />
+      </Box>
     </IconButton>
   );
 };

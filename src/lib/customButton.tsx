@@ -3,6 +3,7 @@ import { Box } from '@/components/primitives/box';
 import { Text } from '@/components/primitives/text';
 import { Button } from '@/components/primitives/button';
 import { styled } from '@/styles/stitches.config';
+import { IconButton } from '@/components/iconButton';
 
 export const CustomButton = () => {
   return (
@@ -16,115 +17,76 @@ export const CustomButton = () => {
         mounted,
       }) => {
         return (
-          <Box
-            {...(!mounted && {
-              'aria-hidden': true,
-              style: {
-                opacity: 0,
-                pointerEvents: `none`,
-                userSelect: `none`,
-              },
-            })}
-          >
+          <Box {...(!mounted && {})}>
             {(() => {
               if (!mounted || !account || !chain) {
                 return (
-                  <Box Widthed={`1`} Heighted={`3`}>
-                    <Button onClick={openConnectModal} type="button">
+                  <IconButton onClick={openConnectModal}>
+                    <Box
+                      Color={`heavy`}
+                      Rounded={`2`}
+                      Padded={`3`}
+                      Heighted={`1`}
+                      Widthed={`2`}
+                    >
                       Connect Wallet
-                    </Button>
-                  </Box>
+                    </Box>
+                  </IconButton>
                 );
               }
               if (chain.unsupported) {
                 return (
                   <Box
-                    css={{
-                      position: `relative`,
-                      margin: `auto 0`,
-                      padding: `0`,
-                      display: `flex`,
-                      flexDirection: `row`,
-                      justifyContent: `center`,
-                      alignItems: `center`,
-                      alignContent: `center`,
-                      flexWrap: `wrap`,
-                      gridGap: `2rem`,
-                      '@bp1': {
-                        gridTemplateColumns: `1fr 1fr`,
-                      },
-                    }}
+                    Color={`heavy`}
+                    Rounded={`2`}
+                    Padded={`3`}
+                    Heighted={`1`}
+                    Widthed={`2`}
                   >
-                    <Button onClick={openChainModal} type="button">
+                    <IconButton onClick={openChainModal}>
                       Wrong network
-                    </Button>
+                    </IconButton>
                   </Box>
                 );
               }
               return (
-                <Box
-                  css={{
-                    position: `relative`,
-                    margin: `auto 0`,
-                    padding: `0`,
-                    display: `flex`,
-                    flexDirection: `row`,
-                    justifyContent: `center`,
-                    alignItems: `center`,
-                    alignContent: `center`,
-                    flexWrap: `wrap`,
-                    gridGap: `2rem`,
-                    '@bp1': {
-                      gridTemplateColumns: `1fr 1fr`,
-                    },
-                  }}
-                >
-                  <Button
-                    onClick={openChainModal}
-                    style={{ display: `flex`, alignItems: `center` }}
-                    type="button"
-                  >
-                    {chain.hasIcon && (
-                      <Box
-                        css={{
-                          background: chain.iconBackground,
-                          position: `relative`,
-                          margin: `auto 0`,
-                          padding: `0`,
-                          display: `flex`,
-                          flexDirection: `row`,
-                          justifyContent: `center`,
-                          alignItems: `center`,
-                          alignContent: `center`,
-                          flexWrap: `wrap`,
-                          gridGap: `2rem`,
-                          '@bp1': {
-                            gridTemplateColumns: `1fr 1fr`,
-                          },
-                          width: 12,
-                          height: 12,
-                          borderRadius: 999,
-                          overflow: `hidden`,
-                          marginRight: 4,
-                        }}
-                      >
-                        {chain.iconUrl && (
-                          <img
-                            alt={chain.name ?? `Chain icon`}
-                            src={chain.iconUrl}
-                            style={{ width: 12, height: 12 }}
-                          />
-                        )}
-                      </Box>
-                    )}
-                    {chain.name}
-                  </Button>
-                  <Button onClick={openAccountModal} type="button">
-                    {account.displayName}
-                    {account.displayBalance
-                      ? ` (${account.displayBalance})`
-                      : ``}
-                  </Button>
+                <Box Positioned={`column`}>
+                  <IconButton onClick={openChainModal}>
+                    <Box
+                      Color={`heavy`}
+                      Rounded={`2`}
+                      Padded={`3`}
+                      Heighted={`1`}
+                      Widthed={`3`}
+                    >
+                      {chain.hasIcon && (
+                        <Box Padded={`3`}>
+                          {chain.iconUrl && (
+                            <img
+                              alt={chain.name ?? `Chain icon`}
+                              src={chain.iconUrl}
+                              style={{ width: 16, height: 16 }}
+                            />
+                          )}
+                        </Box>
+                      )}
+                      {chain.name}
+                    </Box>
+                  </IconButton>
+                  <IconButton onClick={openAccountModal}>
+                    <Box
+                      Color={`heavy`}
+                      Rounded={`2`}
+                      Padded={`3`}
+                      Heighted={`1`}
+                      Widthed={`3`}
+                    >
+                      {account.displayName}
+                      {account.displayBalance
+                        ? ` (${account.displayBalance})`
+                        : ``}
+                    </Box>
+                  </IconButton>
                 </Box>
               );
             })()}

@@ -136,35 +136,11 @@ export default function DynamicL({ children }: any) {
               <Text>4</Text>
             </Box>
           </Box>
-          <Box Positioned={`row`}>
-            <Box
-              Color={`mid`}
-              Rounded={`2`}
-              Padded={`2`}
-              Heighted={`1`}
-              Widthed={`1`}
-              Outlined={`white1`}
-            >
-              <Text>3</Text>
-            </Box>
-            <Box
-              Color={`heavy`}
-              Rounded={`2`}
-              Padded={`3`}
-              Heighted={`1`}
-              Widthed={`1`}
-            >
-              <Text>5</Text>
-            </Box>
-            <Box
-              Color={`light`}
-              Rounded={`1`}
-              Padded={`1`}
-              Heighted={`1`}
-              Widthed={`1`}
-            >
-              <ThemeButton />
-            </Box>
+          <Box
+          // Positioned={`row`}
+          >
+            <CustomButton />
+            <ThemeButton />
           </Box>
         </Box>
         <Box

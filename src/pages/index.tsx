@@ -11,7 +11,7 @@ import Mint from '@/components/mint';
 import TokenId from '@/components/tokenId';
 import DynamicL from '@/components/dynamicL';
 
-export default async function Home() {
+export default function Home() {
   const contract = process.env.NEXT_PUBLIC_TARGET_CONTRACT_ADDRESS;
 
   const tokenId: any = TokenId();
