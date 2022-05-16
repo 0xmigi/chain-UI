@@ -5,8 +5,8 @@ function makeTitle(title: string, name: string) {
 }
 
 export default function Meta({
-  title = `gasBoiiis`,
-  name = `gasBoiiis`,
+  title = `chainUI`,
+  name = `chainUI`,
   description = `a reflection of your onchain decision making presented in the form of a NFT gasboiii`,
   children,
 }: any) {
