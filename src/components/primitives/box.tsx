@@ -26,27 +26,27 @@ export const Box = styled(`div`, {
       },
     },
     Padded: {
-      1: {
+      0: {
         // padding: `5px`,
         margin: `5px`,
       },
-      2: {
+      1: {
         // padding: `10px`,
         margin: `5px`,
       },
-      3: {
+      2: {
         // padding: `15px`,
         margin: `5px`,
       },
     },
     Rounded: {
-      1: {
+      0: {
         borderRadius: `5px`,
       },
-      2: {
+      1: {
         borderRadius: `10px`,
       },
-      3: {
+      2: {
         borderRadius: `15px`,
       },
     },
@@ -61,34 +61,34 @@ export const Box = styled(`div`, {
       },
     },
     Heighted: {
-      1: {
+      0: {
         // flexGrow: `1`,
         // flexBasis: `0`,
         height: `56.67px`,
       },
-      2: {
+      1: {
         // flexGrow: `2`,
         // flexBasis: `0`,
         height: `123.34px`,
       },
-      3: {
+      2: {
         // flexGrow: `3`,
         // flexBasis: `0`,
         height: `190px`,
       },
     },
     Widthed: {
-      1: {
+      0: {
         // flexGrow: `1`,
         // flexBasis: `0`,
         width: `56.67px`,
       },
-      2: {
+      1: {
         // flexGrow: `2`,
         // flexBasis: `0`,
         width: `123.34px`,
       },
-      3: {
+      2: {
         // flexGrow: `3`,
         // flexBasis: `0`,
         width: `190px`,
@@ -96,9 +96,9 @@ export const Box = styled(`div`, {
     },
     Positioned: {
       column: {
-        // justifyContent: `center`,
-        // alignItems: `center`,
-        // alignContent: `center`,
+        justifyContent: `center`,
+        alignItems: `center`,
+        alignContent: `center`,
         flexDirection: `column`,
       },
       row: {
@@ -113,7 +113,16 @@ export const Box = styled(`div`, {
         alignContent: `center`,
       },
     },
+    Aligned: {
+      start: {
+        alignItems: `flex-start`,
+      },
+      end: {
+        alignItems: `flex-end`,
+      },
+    },
     Clickable: {
+      no: {},
       yes1: {
         '&:active': {
           width: `56.67px`,

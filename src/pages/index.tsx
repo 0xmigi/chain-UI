@@ -20,8 +20,7 @@ export default function Home() {
   const { data: accountData } = useAccount();
 
   const [randomAddress, setRandomAddress] = useState(
-    // `0x429f42fb5247e3a34d88d978b7491d4b2bee6105`,
-    `0xffffffffffffffffffffffffffffffffffffffff`,
+    `0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266`,
   );
 
   const [seed, setSeed] = useState(0);
@@ -34,7 +33,6 @@ export default function Home() {
       .map(() => Math.floor(Math.random() * 16).toString(16))
       .join(``);
     setRandomAddress(addressPrefix.concat(genRanHex) as any);
-    // generate seed that looks like a tokenId
     setSeed(Math.floor(Math.random() * (9999 - 0 + 1) + 0));
   }, []);
 
@@ -44,12 +42,17 @@ export default function Home() {
 
   const _xy = width <= 700 ? width / 1.1 : 600;
 
-  console.log(`height is `, height);
-  console.log(`width is `, width);
-
   // parse random eth address into color hex codes
   const address2colors = address ? address.replace(`0x`, `ff`) : randomAddress;
   const colors = address2colors.match(/.{1,6}/g);
+
+  const contents: any[] = randomAddress.match(/.{1,6}/g).map((color: any) => {
+    const c = color.match(/\d/g);
+    return c.join('');
+  });
+
+  console.log('contents is ', contents);
+
   const mapdColors =
     colors &&
     colors.map((color: any, index: any) => (
@@ -94,7 +97,7 @@ export default function Home() {
               </Box>
             )}
 
-            <DynamicL>{/* {mapdColors} */}</DynamicL>
+            <DynamicL contents={contents} colors={colors} />
 
             {/* <Box
               css={{

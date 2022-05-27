@@ -23,9 +23,9 @@ export const ThemeButton = ({ ...props }) => {
       <Box
         Color={`heavy`}
         Rounded={`2`}
-        Padded={`3`}
-        Heighted={`1`}
-        Widthed={`1`}
+        Padded={`2`}
+        Heighted={`0`}
+        Widthed={`0`}
       >
         <SunIcon
           className={xStyle({

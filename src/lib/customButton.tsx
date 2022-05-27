@@ -25,7 +25,7 @@ export const CustomButton = () => {
                     <Box
                       Color={`heavy`}
                       Rounded={`2`}
-                      Padded={`3`}
+                      Padded={`2`}
                       Heighted={`1`}
                       Widthed={`2`}
                     >
@@ -36,17 +36,17 @@ export const CustomButton = () => {
               }
               if (chain.unsupported) {
                 return (
-                  <Box
-                    Color={`heavy`}
-                    Rounded={`2`}
-                    Padded={`3`}
-                    Heighted={`1`}
-                    Widthed={`2`}
-                  >
-                    <IconButton onClick={openChainModal}>
+                  <IconButton onClick={openChainModal}>
+                    <Box
+                      Color={`heavy`}
+                      Rounded={`2`}
+                      Padded={`2`}
+                      Heighted={`0`}
+                      Widthed={`2`}
+                    >
                       Wrong network
-                    </IconButton>
-                  </Box>
+                    </Box>
+                  </IconButton>
                 );
               }
               return (
@@ -55,12 +55,12 @@ export const CustomButton = () => {
                     <Box
                       Color={`heavy`}
                       Rounded={`2`}
-                      Padded={`3`}
-                      Heighted={`1`}
-                      Widthed={`3`}
+                      Padded={`2`}
+                      Heighted={`0`}
+                      Widthed={`2`}
                     >
                       {chain.hasIcon && (
-                        <Box Padded={`3`}>
+                        <Box Padded={`2`}>
                           {chain.iconUrl && (
                             <img
                               alt={chain.name ?? `Chain icon`}
@@ -77,9 +77,9 @@ export const CustomButton = () => {
                     <Box
                       Color={`heavy`}
                       Rounded={`2`}
-                      Padded={`3`}
-                      Heighted={`1`}
-                      Widthed={`3`}
+                      Padded={`2`}
+                      Heighted={`0`}
+                      Widthed={`2`}
                     >
                       {account.displayName}
                       {account.displayBalance
