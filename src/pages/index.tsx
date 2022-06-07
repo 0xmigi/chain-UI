@@ -3,11 +3,11 @@ import { useAccount } from 'wagmi';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import useWindowDimensions from '@/lib/useWindowDimensions';
 import { CustomButton } from '@/lib/customButton';
+// import main from './../lib/src/index';
 
 import { Box } from '@/components/primitives/box';
 import { Text } from '@/components/primitives/text';
 import GasBoiiisSVG from '@/components/gasBoiiisSVG';
-import Mint from '@/components/mint';
 import TokenId from '@/components/tokenId';
 import DynamicL from '@/components/dynamicL';
 
@@ -78,6 +78,7 @@ export default function Home() {
       <>
         <Box Padded={`1`}>
           <GasBoiiisSVG address={address} seed={_seed} xy={_xy - 10} />
+          {/* {main} */}
         </Box>
         <Box>
           <Box
@@ -86,6 +87,7 @@ export default function Home() {
               height: _xy,
             }}
           >
+            {/* <ConnectButton accountStatus="avatar" /> */}
             {accountData && (
               <Box
                 css={{

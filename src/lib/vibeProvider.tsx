@@ -49,7 +49,7 @@ export default function VibeProvider({ children }: any) {
           darkMode: darkTheme({
             accentColor: `#7b3fe4`,
             accentColorForeground: `white`,
-            borderRadius: `small`,
+            borderRadius: `large`,
             fontStack: `system`,
           }),
         }}

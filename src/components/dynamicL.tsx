@@ -4,7 +4,6 @@ import { ThemeButton } from './actions/theme';
 import { CustomButton } from '@/lib/customButton';
 import { Piee } from '@/components/primitives/pie';
 import { Constants } from './primitives/constants';
-import { ReactFragment, useState } from 'react';
 
 export default function DynamicL({ children, contents, colors }: any) {
   const content = colors.map((color: any, index: any) => {
@@ -24,8 +23,8 @@ export default function DynamicL({ children, contents, colors }: any) {
   //     (contents[index] % 3)
   //   )
   // });
-  const v = [0, 2, 1, 1, 0, 0, 1];
-  const w = [0, 1, 2, 1, 0, 0, 1];
+  const v = [0, 2, 1, 1, 1, 0, 1];
+  const w = [2, 1, 2, 0, 0, 0, 1];
 
   const collection = [
     {
@@ -262,6 +261,16 @@ export default function DynamicL({ children, contents, colors }: any) {
         >
           <Piee data={Constants.data} />
         </Box>
+
+        {/* <Box
+          Color={`heavy`}
+          Rounded={`2`}
+          Padded={`1`}
+          Heighted={`2`}
+          Widthed={`2`}
+        >
+          text
+        </Box> */}
         <Box Positioned={`column`}>
           <CustomButton />
           <ThemeButton />
